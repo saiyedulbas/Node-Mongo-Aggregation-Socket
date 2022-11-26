@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/script.js"></script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.hide { display: none; }
+</style>
+
+</head>
+<body>
+
+<div style="display: flex; align-items: center;">
+  <button onclick="myFunction1()">Search by Status</button>
+  <span id="smallPrice" class="hide" >Status $ <input type="text" id="small1">
+    <button onclick="myFunction1API()">Submit</button></span>
+  <button onclick="myFunction2()">Search by Category</button>
+  <span id="smallPrice2" class="hide" >Category $ <input type="text" id="small2">
+    <button onclick="myFunction2API()">Submit</button></span>
+  <button onclick="myFunction3()">Search by Price in Category</button>
+  <span id="smallPrice3" class="hide" >Price in Category $ 
+    <div>
+      <label >Category</label>
+      <input type="text" id="small3">
+      <label >Price less than</label>
+      <input type="text" id="small4">
+    </div>
+    <button onclick="myFunction3API()">Submit</button></span>
+</div>
+<div>
+  <button onclick="myFunction4()">Insert Product</button>
+  <span id="smallPrice4" class="hide" >Insert 
+    <div>
+      <label >Name</label>
+      <input type="text" id="name">
+      <label >Price</label>
+      <input type="number" id="price">
+      <label >Category</label>
+      <input type="text" id="category">
+      <label >Status</label>
+      <input type="text" id="status">
+    </div>
+    <button onclick="myFunction4API()">Submit</button></span>
+</div>
+<div>
+  <button onclick="myFunction5()">Refresh Product with socket Call</button>
+</div>
+<table>
+  <caption><h1>Products table</h1></caption>
+  <thead>
+    <tr id="headrow">
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Statue</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="9">&copy;2022Sbashar</td>
+  </tr>
+  </tfoot>
+</table>
+
+</body>
+</html>
